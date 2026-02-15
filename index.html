@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Duminuco PhD</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --colors--background: #e6e5e5; 
+            --colors--text: #1b1b1b;
+            --colors--text-secondary: #6b6b6b;
+            --colors--border: rgba(0, 0, 0, 0.1);
+            --colors--toggle: #1b1b1b; 
+            --font-family: 'Newsreader', Georgia, serif;
+            --container-narrow: 620px;
+            --base-font-size: 19px;    
+        }
+
+        body.dark-mode {
+            --colors--background: #2E3047; /* Il tuo nuovo sfondo scuro */
+            --colors--text: #f0f0f0;
+            --colors--text-secondary: #b0b3c5;
+            --colors--border: rgba(255, 255, 255, 0.15);
+            --colors--toggle: #ffffff; 
+        }
+
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--colors--text);
+            background-color: var(--colors--background);
+            line-height: 1.60; 
+            transition: background-color 0.4s ease, color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--container-narrow);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            padding: 3.5rem 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .header-name {
+            font-size: 1.30rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .header-name a { color: var(--colors--text); text-decoration: none; }
+
+        .theme-switch {
+            display: inline-block;
+            height: 20px;
+            position: relative;
+            width: 40px;
+        }
+
+        .theme-switch input { display: none; }
+
+        .slider {
+            background-color: rgba(0,0,0,0.05);
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            transition: .4s;
+            border-radius: 34px;
+            border: 1px solid var(--colors--border);
+        }
+
+        body.dark-mode .slider {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px; width: 14px;
+            left: 2px; bottom: 2px;
+            background-color: var(--colors--text);
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: transparent; }
+        input:checked + .slider:before { 
+            transform: translateX(20px);
+            background-color: var(--colors--toggle);
+        }
+
+        .bio-intro p { margin-bottom: 1.1em; }
+
+        a {
+            color: var(--colors--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+
+        a:hover { color: var(--colors--text-secondary); }
+
+        footer {
+            margin-top: 5rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--colors--border);
+            font-size: 0.85rem;
+            color: var(--colors--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 767px) {
+            html { font-size: 17.5px; }
+            footer { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1 class="header-name"><a href="/">Giovanni Duminuco PhD</a></h1>
+        <label class="theme-switch">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider"></div>
+        </label>
+    </header>
+
+    <main>
+        <div class="bio-intro">
+            <p><strong>Dottore di ricerca in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre quindici anni di esperienza nella <strong>progettazione sociale</strong> e nei contesti educativi complessi.</p>
+            <p>Il mio lavoro interroga le <strong>categorie e i linguaggi</strong> attraverso cui costruiamo le pratiche educative.</p>
+            <p>Questo spazio è un <strong>osservatorio critico</strong> sul presente e un laboratorio di ricerca aperto. Qui pubblico saggi, analisi e riflessioni sul sistema educativo, sul <strong>terzo settore</strong> e sulle pratiche sociali contemporanee.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div>© 2026 Giovanni Duminuco</div>
+        <div class="footer-links">
+            <a href="mailto:giovanni.duminuco@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const toggleSwitch = document.querySelector('#checkbox');
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleSwitch.checked = true;
+    }
+    toggleSwitch.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+</body>
+</html>
