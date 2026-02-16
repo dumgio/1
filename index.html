@@ -21,12 +21,13 @@
             --base-font-size: 19px;    
         }
 
+        /* MODIFICA COLORI DARK MODE */
         body.dark-mode {
-            --colors--background: #2E3047; 
-            --colors--text: #f0f0f0;
-            --colors--text-secondary: #b0b3c5;
-            --colors--border: rgba(255, 255, 255, 0.15);
-            --colors--toggle: #ffffff; 
+            --colors--background: #112044;  /* Il tuo nuovo blu notte */
+            --colors--text: #C8D3ED;        /* Il tuo nuovo azzurro chiaro */
+            --colors--text-secondary: #90a0c7; /* Una tonalità intermedia per i testi secondari */
+            --colors--border: rgba(200, 211, 237, 0.2);
+            --colors--toggle: #C8D3ED; 
         }
 
         *, *::before, *::after {
@@ -68,6 +69,7 @@
 
         .header-name a { color: var(--colors--text); text-decoration: none; }
 
+        /* Stile dello Switch */
         .theme-switch {
             display: inline-block;
             height: 20px;
