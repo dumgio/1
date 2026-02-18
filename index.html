@@ -30,6 +30,7 @@
             header nav { border-top-color: #333; }
             footer { border-top-color: #333; }
             h2 { border-bottom-color: #ddd; }
+            .header-main a { color: #ddd; } /* Colore nome in dark mode */
         }
 
         header { margin-bottom: 3rem; }
@@ -39,6 +40,12 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 1rem;
+        }
+
+        /* Il link sul nome non deve avere sottolineatura */
+        .header-main a {
+            text-decoration: none;
+            color: #111;
         }
 
         .profile-img {
@@ -108,7 +115,7 @@
 <header>
     <div class="header-main">
         <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
-        <h1>Giovanni Duminuco</h1>
+        <a href="/"><h1>Giovanni Duminuco</h1></a>
     </div>
     <nav>
         <a href="#bio">Bio</a>
