@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Duminuco | PhD</title>
     <style>
-        /* CONFIGURAZIONE BASE */
+        /* CONFIGURAZIONE BASE (TEMA CHIARO) */
         body {
             font-family: Georgia, serif;
             line-height: 1.6;
@@ -14,15 +14,22 @@
             max-width: 650px;
             margin: 50px auto;
             padding: 0 20px;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* DARK MODE AUTOMATICO */
+        /* RISPETTO DELLE IMPOSTAZIONI UTENTE (TEMA SCURO) */
         @media (prefers-color-scheme: dark) {
-            body { background-color: #1a1a1a; color: #ddd; }
+            body { 
+                background-color: #1a1a1a; 
+                color: #ddd; 
+            }
             a { color: #9cf; }
             nav a { color: #eee; }
             .profile-img { border-color: #333; filter: grayscale(100%) brightness(0.8); }
-            input, select, button { background: #2a2a2a; color: #eee; border-color: #444 !important; }
+            header nav { border-top-color: #333; }
+            footer { border-top-color: #333; }
+            h2 { border-bottom-color: #ddd; }
         }
 
         header { margin-bottom: 3rem; }
@@ -61,7 +68,7 @@
             margin-right: 20px; 
             text-decoration: none; 
             font-weight: bold; 
-            color: #111;
+            color: inherit;
             display: inline-block;
         }
 
@@ -81,40 +88,11 @@
             letter-spacing: 1px;
         }
 
-        /* STILE FORM RICHIESTA */
-        .download-form {
-            background: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #eee;
-            margin-top: 10px;
-        }
-        
-        body.dark-mode .download-form { background: #222; border-color: #333; }
+        main a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+        main a:hover { background-color: #ffff00; color: #000; }
 
-        .form-group { margin-bottom: 15px; }
-
-        input[type="email"], select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            font-family: Georgia, serif;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        button {
-            font-family: Georgia, serif;
-            font-weight: bold;
-            background: #000;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        button:hover { background: #333; }
+        ul { list-style-type: square; padding-left: 20px; }
+        li { margin-bottom: 10px; }
 
         footer {
             margin-top: 5rem;
@@ -158,35 +136,16 @@
 
     <section id="scritti">
         <h2>Scritti scelti</h2>
-        <p>I testi integrali sono disponibili su richiesta per fini di studio e ricerca. Inserisci i tuoi dati per ricevere una copia digitale.</p>
-        
-        <div class="download-form">
-            <form action="https://formsubmit.co/giovanni.duminuco@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Nuova richiesta saggio dal sito web">
-                <input type="hidden" name="_captcha" value="false">
-                
-                <div class="form-group">
-                    <label for="email">Tua Email:</label>
-                    <input type="email" name="email" id="email" required placeholder="esempio@email.it">
-                </div>
-
-                <div class="form-group">
-                    <label for="documento">Seleziona lo scritto:</label>
-                    <select name="documento" id="documento" required>
-                        <option value="L'istituzione e il suo fuori">L'istituzione e il suo fuori (2025)</option>
-                        <option value="Pedagogia critica e linguaggi tecnici">Pedagogia critica e linguaggi tecnici (2024)</option>
-                    </select>
-                </div>
-
-                <button type="submit">Invia richiesta</button>
-            </form>
-        </div>
+        <ul>
+            <li><a href="#">L'istituzione e il suo fuori</a> (2025)</li>
+            <li><a href="#">Pedagogia critica e linguaggi tecnici</a> (2024)</li>
+        </ul>
     </section>
 </main>
 
 <footer>
     © 2026 — Giovanni Duminuco. <br>
-    Sito statico, senza tracciamenti. I dati inseriti nel modulo verranno usati esclusivamente per l'invio del materiale richiesto.
+    Sito statico che rispetta le preferenze di sistema dell'utente.
 </footer>
 
 </body>
