@@ -3,188 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovanni Duminuco PhD Candidate</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <title>Giovanni Duminuco | PhD</title>
     <style>
-        :root {
-            /* COLORI MODALITÀ CHIARA (EFFETTO CREMA/CARTA) */
-            --colors--background: #FDFCF8;    /* Crema chiaro e riposante */
-            --colors--text: #292929;          /* Il tuo antracite per il testo */
-            --colors--text-secondary: #666666;
-            --colors--border: rgba(41, 41, 41, 0.1);
-            --colors--toggle: #292929; 
-            
-            /* TIPOGRAFIA */
-            --font-family: 'Newsreader', 'Georgia', serif;
-            --container-narrow: 620px;
-            --base-font-size: 20px; /* I font serif rendono meglio se leggermente più grandi */
-        }
-
-        /* COLORI MODALITÀ SCURA */
-        body.dark-mode {
-            --colors--background: #292929;    /* Il tuo antracite diventa lo sfondo */
-            --colors--text: #FDFCF8;          /* Il crema diventa il colore del testo */
-            --colors--text-secondary: #A0A0A0;
-            --colors--border: rgba(253, 252, 248, 0.15);
-            --colors--toggle: #FDFCF8; 
-        }
-
-        *, *::before, *::after {
-            margin: 0; padding: 0; box-sizing: border-box;
-        }
-
-        html {
-            font-size: var(--base-font-size);
-            -webkit-text-size-adjust: 100%;
-        }
-
+        /* CONFIGURAZIONE BASE */
         body {
-            font-family: var(--font-family);
-            color: var(--colors--text);
-            background-color: var(--colors--background);
-            line-height: 1.65; 
-            transition: background-color 0.5s ease, color 0.5s ease;
-            -webkit-font-smoothing: antialiased;
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #111;
+            background-color: #fff;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        .container {
-            max-width: var(--container-narrow);
-            margin: 0 auto;
-            padding: 0 24px;
+        /* DARK MODE AUTOMATICO */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #1a1a1a; color: #ddd; }
+            a { color: #9cf; }
+            nav a { color: #eee; }
+            .profile-img { border-color: #333; filter: grayscale(100%) brightness(0.8); }
+            input, select, button { background: #2a2a2a; color: #eee; border-color: #444 !important; }
         }
 
-        .header {
-            padding: 4rem 0 3rem;
+        header { margin-bottom: 3rem; }
+
+        .header-main {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1rem;
         }
 
-        .header-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .header-name a { color: var(--colors--text); text-decoration: none; }
-
-        /* Switch del tema */
-        .theme-switch {
-            display: inline-block;
-            height: 20px;
-            position: relative;
-            width: 40px;
-        }
-
-        .theme-switch input { display: none; }
-
-        .slider {
-            background-color: rgba(0,0,0,0.05);
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            transition: .4s;
-            border-radius: 34px;
-            border: 1px solid var(--colors--border);
-        }
-
-        body.dark-mode .slider {
-            background-color: rgba(255,255,255,0.05);
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 14px; width: 14px;
-            left: 2px; bottom: 2px;
-            background-color: var(--colors--text);
-            transition: .4s;
+        .profile-img {
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #eee;
+            filter: grayscale(100%);
         }
 
-        input:checked + .slider:before { 
-            transform: translateX(20px);
-            background-color: var(--colors--toggle);
+        h1 { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin: 0;
+            letter-spacing: -0.02em;
         }
 
-        .bio-intro p { margin-bottom: 1.3em; }
-
-        a {
-            color: var(--colors--text);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-thickness: 1px;
+        nav { 
+            font-size: 1rem; 
+            margin-top: 15px; 
+            border-top: 1px solid #eee;
+            padding-top: 10px;
         }
+        
+        nav a { 
+            margin-right: 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            color: #111;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #ffff00;
+            color: #000;
+        }
+
+        section { margin-bottom: 2.5rem; }
+        
+        h2 { 
+            font-size: 1.1rem; 
+            border-bottom: 1px solid #000; 
+            padding-bottom: 3px; 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* STILE FORM RICHIESTA */
+        .download-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #eee;
+            margin-top: 10px;
+        }
+        
+        body.dark-mode .download-form { background: #222; border-color: #333; }
+
+        .form-group { margin-bottom: 15px; }
+
+        input[type="email"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            font-family: Georgia, serif;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-family: Georgia, serif;
+            font-weight: bold;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        button:hover { background: #333; }
 
         footer {
-            margin-top: 6rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--colors--border);
-            font-size: 0.85rem;
-            font-style: italic; /* Un tocco di eleganza tipica dei font serif */
-            color: var(--colors--text-secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links { display: flex; gap: 1.5rem; font-style: normal; }
-
-        @media (max-width: 767px) {
-            html { font-size: 18px; }
-            footer { flex-direction: column; gap: 0.5rem; }
+            margin-top: 5rem;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header class="header">
-        <h1 class="header-name"><a href="/">Giovanni Duminuco</a></h1>
-        <label class="theme-switch">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider"></div>
-        </label>
-    </header>
+<header>
+    <div class="header-main">
+        <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
+        <h1>Giovanni Duminuco</h1>
+    </div>
+    <nav>
+        <a href="#bio">Bio</a>
+        <a href="#ricerca">Ricerca</a>
+        <a href="#scritti">Scritti</a>
+        <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
+    </nav>
+</header>
 
-    <main>
-        <div class="bio-intro">
-            <p><strong>PhD Candidate in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre quindici anni di esperienza nella <strong>progettazione sociale</strong> e nei contesti educativi complessi.</p>
-            <p>Il mio lavoro interroga le <strong>categorie e i linguaggi</strong> attraverso cui costruiamo le pratiche educative.</p>
-            <p>Questo spazio è un <strong>osservatorio critico</strong> sul presente e un laboratorio di ricerca aperto. Qui pubblico saggi, analisi e riflessioni sul sistema educativo, sul <strong>terzo settore</strong> e sulle pratiche sociali contemporanee.</p>
+<main>
+    <section id="bio">
+        <p><strong>PhD Candidate in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre 15 anni di esperienza nella progettazione sociale e nei contesti educativi complessi.</p>
+        <p>Il mio lavoro interroga le categorie e i linguaggi attraverso cui costruiamo le pratiche educative.</p>
+    </section>
+
+    <section id="ricerca">
+        <h2>Interessi di ricerca</h2>
+        <ul>
+            <li>Filosofia dell'educazione</li>
+            <li>Pedagogia generale e sociale</li>
+            <li>Epistemologia della complessità</li>
+            <li>Analisi del Terzo Settore e politiche sociali</li>
+        </ul>
+    </section>
+
+    <section id="scritti">
+        <h2>Scritti scelti</h2>
+        <p>I testi integrali sono disponibili su richiesta per fini di studio e ricerca. Inserisci i tuoi dati per ricevere una copia digitale.</p>
+        
+        <div class="download-form">
+            <form action="https://formsubmit.co/giovanni.duminuco@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nuova richiesta saggio dal sito web">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label for="email">Tua Email:</label>
+                    <input type="email" name="email" id="email" required placeholder="esempio@email.it">
+                </div>
+
+                <div class="form-group">
+                    <label for="documento">Seleziona lo scritto:</label>
+                    <select name="documento" id="documento" required>
+                        <option value="L'istituzione e il suo fuori">L'istituzione e il suo fuori (2025)</option>
+                        <option value="Pedagogia critica e linguaggi tecnici">Pedagogia critica e linguaggi tecnici (2024)</option>
+                    </select>
+                </div>
+
+                <button type="submit">Invia richiesta</button>
+            </form>
         </div>
-    </main>
+    </section>
+</main>
 
-    <footer>
-        <div>© 2026 Giovanni Duminuco</div>
-        <div class="footer-links">
-            <a href="mailto:giovanni.duminuco@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
-</div>
+<footer>
+    © 2026 — Giovanni Duminuco. <br>
+    Sito statico, senza tracciamenti. I dati inseriti nel modulo verranno usati esclusivamente per l'invio del materiale richiesto.
+</footer>
 
-<script>
-    const toggleSwitch = document.querySelector('#checkbox');
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        toggleSwitch.checked = true;
-    }
-    toggleSwitch.addEventListener('change', (e) => {
-        if (e.target.checked) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        }
-    });
-</script>
 </body>
 </html>
