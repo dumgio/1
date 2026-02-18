@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Duminuco | PhD</title>
     <style>
-        /* CONFIGURAZIONE BASE (TEMA CHIARO) */
+        /* CONFIGURAZIONE BASE - FISSA SU TEMA CHIARO */
         body {
             font-family: Georgia, serif;
             line-height: 1.6;
@@ -15,22 +15,6 @@
             margin: 50px auto;
             padding: 0 20px;
             -webkit-font-smoothing: antialiased;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* RISPETTO DELLE IMPOSTAZIONI UTENTE (TEMA SCURO) */
-        @media (prefers-color-scheme: dark) {
-            body { 
-                background-color: #1a1a1a; 
-                color: #ddd; 
-            }
-            a { color: #9cf; }
-            nav a { color: #eee; }
-            .profile-img { border-color: #333; filter: grayscale(100%) brightness(0.8); }
-            header nav { border-top-color: #333; }
-            footer { border-top-color: #333; }
-            h2 { border-bottom-color: #ddd; }
-            .header-main a { color: #ddd; } /* Colore nome in dark mode */
         }
 
         header { margin-bottom: 3rem; }
@@ -42,7 +26,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Il link sul nome non deve avere sottolineatura */
+        /* Il link sul nome punta alla home senza sottolineatura */
         .header-main a {
             text-decoration: none;
             color: #111;
@@ -64,6 +48,7 @@
             letter-spacing: -0.02em;
         }
 
+        /* NAVIGAZIONE: Solo Grassetto, Iniziale Maiuscola, No Sottolineatura */
         nav { 
             font-size: 1rem; 
             margin-top: 15px; 
@@ -75,7 +60,7 @@
             margin-right: 20px; 
             text-decoration: none; 
             font-weight: bold; 
-            color: inherit;
+            color: #111;
             display: inline-block;
         }
 
@@ -95,8 +80,9 @@
             letter-spacing: 1px;
         }
 
-        main a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-        main a:hover { background-color: #ffff00; color: #000; }
+        /* Link nel testo con sottolineatura */
+        main a { color: #000; text-decoration: underline; text-underline-offset: 2px; }
+        main a:hover { background-color: #ffff00; }
 
         ul { list-style-type: square; padding-left: 20px; }
         li { margin-bottom: 10px; }
@@ -152,7 +138,7 @@
 
 <footer>
     © 2026 — Giovanni Duminuco. <br>
-    Sito statico che rispetta le preferenze di sistema dell'utente.
+    Sito statico ad alta leggibilità.
 </footer>
 
 </body>
