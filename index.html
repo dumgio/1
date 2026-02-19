@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Giovanni Duminuco | Filosofia, Pedagogia e Progettazione Sociale</title>
-    <meta name="description" content="Sito ufficiale di Giovanni Duminuco, docente e ricercatore. Ricerca letteraria e filosofica su linguaggi, narrazioni e progettazione sociale.">
+    <meta name="description" content="Sito ufficiale di Giovanni Duminuco, docente e ricercatore. Oltre 20 anni di esperienza nella progettazione sociale e ricerca su linguaggi, narrazioni e pedagogia.">
     <meta name="author" content="Giovanni Duminuco">
     <link rel="canonical" href="https://www.giovanniduminuco.it/">
 
     <style>
-        /* CONFIGURAZIONE BASE - FISSA SU TEMA CHIARO */
+        /* CONFIGURAZIONE BASE */
         body {
             font-family: Georgia, serif;
             line-height: 1.6;
@@ -31,7 +31,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Il link sul nome punta alla home senza sottolineatura */
         .header-main a {
             text-decoration: none;
             color: #111;
@@ -53,7 +52,7 @@
             letter-spacing: -0.02em;
         }
 
-        /* NAVIGAZIONE: Solo Grassetto, Iniziale Maiuscola, No Sottolineatura */
+        /* NAVIGAZIONE: Pulita, senza evidenziatore giallo */
         nav { 
             font-size: 1rem; 
             margin-top: 15px; 
@@ -67,11 +66,14 @@
             font-weight: bold; 
             color: #111;
             display: inline-block;
+            transition: opacity 0.2s ease;
         }
 
+        /* Effetto hover sobrio: il testo diventa leggermente più chiaro invece che giallo */
         nav a:hover {
-            background-color: #ffff00;
-            color: #000;
+            background-color: transparent; /* Rimosso il giallo */
+            opacity: 0.6;
+            color: #111;
         }
 
         section { margin-bottom: 2.5rem; }
@@ -85,9 +87,17 @@
             letter-spacing: 1px;
         }
 
-        /* Link nel testo con sottolineatura */
-        main a { color: #000; text-decoration: underline; text-underline-offset: 2px; }
-        main a:hover { background-color: #ffff00; }
+        /* Link nel testo: sottolineatura classica senza sfondo giallo */
+        main a { 
+            color: #000; 
+            text-decoration: underline; 
+            text-underline-offset: 2px; 
+        }
+        
+        main a:hover { 
+            background-color: transparent; /* Rimosso il giallo anche qui */
+            opacity: 0.6;
+        }
 
         ul { list-style-type: square; padding-left: 20px; }
         li { margin-bottom: 10px; }
@@ -118,7 +128,7 @@
 
 <main>
     <section id="bio">
-        <p><strong>PhD Candidate in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
+        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
         <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
     </section>
 
