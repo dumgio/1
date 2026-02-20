@@ -70,15 +70,13 @@
             font-weight: bold; 
             color: #111;
             display: inline-block;
-            /* Crea lo spazio per la sottolineatura senza spostare il testo */
             border-bottom: 1px solid transparent; 
             padding-bottom: 2px;
-            transition: border-color 0.3s ease, color 0.3s ease;
+            transition: border-color 0.3s ease;
         }
 
         nav a:hover, nav a:active {
-            border-bottom: 1px solid #111; /* Sottolineatura leggera nera */
-            opacity: 1; /* Mantiene il testo nitido */
+            border-bottom: 1px solid #111;
         }
 
         section { 
@@ -114,8 +112,35 @@
         }
         
         li { 
-            margin-bottom: 12px; 
+            margin-bottom: 25px;
             padding-left: 5px;
+        }
+
+        /* Riduzione interlinea specifica per Interessi di Ricerca */
+        #ricerca li {
+            margin-bottom: 5px;
+        }
+
+        .pub-detail {
+            display: block;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* BOX AUDIO */
+        .audio-container {
+            margin-top: 15px;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #eee;
+        }
+        
+        .audio-container p {
+            margin-top: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         footer {
@@ -150,7 +175,7 @@
 
 <main>
     <section id="bio">
-        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario. Laureato in <strong>Filosofia</strong>, con oltre 20 anni di esperienza nella <strong>progettazione sociale</strong> in contesti educativi complessi.</p>
+        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario. Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
         <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
     </section>
 
@@ -167,8 +192,31 @@
     <section id="scritti">
         <h2>Scritti scelti</h2>
         <ul>
-            <li><a href="#">L'istituzione e il suo fuori</a> (2025)</li>
-            <li><a href="#">Pedagogia critica e linguaggi tecnici</a> (2024)</li>
+            <li>
+                <strong>La ferita distorta dell'agire</strong> (Formebrevi, 2017)
+                <span class="pub-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
+                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
+            </li>
+
+            <li>
+                <strong>Dinamiche del disaccordo</strong> (Anterem Edizioni, 2013)
+                <span class="pub-detail">Opera vincitrice del Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
+                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda editoriale</a>
+                
+                <div class="audio-container">
+                    <p>
+                        <strong>Interpretazione sonora</strong><br>
+                        Composizione originale di <strong>Valentina Massetti</strong> ispirata a <em>Dinamiche del disaccordo</em>.<br>
+                        <span style="font-size: 0.8rem; color: #777; font-style: italic;">
+                            Eseguita nel 2013 presso la Biblioteca Civica di Verona. Organico: voce recitante, flauto e sassofono contralto.
+                        </span>
+                    </p>
+                    <audio controls style="width: 100%; height: 35px;">
+                        <source src="https://www.cosimocolazzo.it/wordpress/wp-content/uploads/2013/12/5_Massetti_Dinamiche-del-disaccordo_testo-di-Duminuco.mp3" type="audio/mpeg">
+                        Il tuo browser non supporta l'ascolto audio.
+                    </audio>
+                </div>
+            </li>
         </ul>
     </section>
 </main>
