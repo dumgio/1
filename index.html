@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Duminuco | Filosofia, Pedagogia e Progettazione Sociale</title>
+    <meta name="description" content="Sito ufficiale di Giovanni Duminuco: Dottorando in Scienze dell'educazione, docente e autore. Esplora i temi della filosofia dell'educazione e della progettazione sociale.">
+    <link rel="canonical" href="https://www.giovanniduminuco.it/">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Giovanni Duminuco",
+      "jobTitle": "Dottorando in Scienze dell'educazione, Docente Universitario",
+      "url": "https://www.giovanniduminuco.it",
+      "description": "Dottorando in Scienze dell'educazione e docente universitario specializzato in filosofia dell'educazione e progettazione sociale."
+    }
+    </script>
+
     <style>
-        /* CONFIGURAZIONE BASE */
+        /* ... Il tuo CSS rimane invariato ... */
         html { scroll-behavior: smooth; }
         body {
             font-family: Georgia, serif;
@@ -17,45 +31,24 @@
             padding: 50px 20px;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* Riduzione spazio tra Navigazione e Bio */
-        header { margin-bottom: 1.5rem; } 
-        
         .header-main { display: flex; align-items: center; gap: 20px; margin-bottom: 1rem; }
         .header-main a { text-decoration: none; color: #111; }
         .profile-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 1px solid #eee; filter: grayscale(100%); }
         h1 { font-size: 1.5rem; font-weight: bold; margin: 0; letter-spacing: -0.02em; }
-
         nav { font-size: 0.95rem; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
         nav a { margin-right: 25px; text-decoration: none; font-weight: bold; color: #111; display: inline-block; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.3s ease; }
         nav a:hover { border-bottom: 1px solid #111; }
-
-        /* Riduzione spazio generale tra le sezioni */
         section { margin-bottom: 2rem; } 
-        
         h2 { font-size: 1rem; border-bottom: 1px solid #111; padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
         main a { color: #000; text-decoration: underline; text-underline-offset: 3px; }
-        
-        ul { list-style-type: square; padding-left: 20px; margin-top: 5px; } /* Ridotto margine superiore lista */
+        ul { list-style-type: square; padding-left: 20px; margin-top: 5px; }
         li { margin-bottom: 20px; padding-left: 5px; }
-        
-        /* Interessi di Ricerca ancora più compatti */
         #ricerca li { margin-bottom: 5px; }
-
         .pub-detail { display: block; font-size: 0.9rem; color: #555; margin-top: 4px; line-height: 1.5; }
-
-        /* BOX AUDIO */
-        .audio-container {
-            margin-top: 10px;
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #eee;
-        }
+        .audio-container { margin-top: 10px; background: #f9f9f9; padding: 15px; border: 1px solid #eee; }
         .audio-container p { margin-top: 0; font-size: 0.9rem; line-height: 1.5; }
-
         audio { width: 100%; height: 35px; margin-top: 5px; }
         .sc-minimal { margin-top: 5px; border: none; overflow: hidden; height: 20px; display: block; }
-
         footer { margin-top: 4rem; font-size: 0.85rem; color: #666; border-top: 1px solid #eee; padding-top: 25px; }
         @media (max-width: 480px) { .header-main { flex-direction: column; align-items: flex-start; gap: 15px; } }
     </style>
@@ -64,7 +57,7 @@
 
 <header>
     <div class="header-main">
-        <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
+        <img src="GD.png" alt="Giovanni Duminuco - Dottorando e Docente" class="profile-img">
         <a href="/"><h1>Giovanni Duminuco</h1></a>
     </div>
     <nav>
@@ -97,12 +90,12 @@
             <li>
                 <strong>La ferita distorta dell'agire</strong> (Formebrevi, 2017)
                 <span class="pub-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
-                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
+                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank" rel="noopener">Scheda dell'opera</a>
                 
                 <div class="audio-container">
                     <p><strong>Lettura dell'opera</strong><br>
                     <span style="font-size: 0.8rem; color: #777;">Voce: Giovanni Giudice</span></p>
-                    <iframe class="sc-minimal" width="100%" scrolling="no" frameborder="no" allow="autoplay" 
+                    <iframe title="Lettura audio La ferita distorta dell'agire" class="sc-minimal" width="100%" scrolling="no" frameborder="no" allow="autoplay" 
                         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/266911713&color=%23111111&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
                     </iframe>
                 </div>
@@ -111,7 +104,7 @@
             <li>
                 <strong>Dinamiche del disaccordo</strong> (Anterem Edizioni, 2013)
                 <span class="pub-detail">Opera vincitrice del Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
-                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda editoriale</a>
+                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank" rel="noopener">Scheda editoriale</a>
                 
                 <div class="audio-container">
                     <p>
@@ -134,7 +127,7 @@
 
 <footer>
     © 2026 — Giovanni Duminuco. <br>
-    Sito statico: nessun cookie, nessun tracciamento, nessuna risorsa esterna.
+    Sito statico: nessun cookie, nessun tracciamento.
 </footer>
 
 </body>
