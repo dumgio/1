@@ -4,27 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Duminuco | Filosofia, Pedagogia e Progettazione Sociale</title>
-    <meta name="description" content="Sito ufficiale di Giovanni Duminuco: Dottorando in Scienze dell'educazione, docente e autore. Esplora i temi della filosofia dell'educazione e della progettazione sociale.">
-    <link rel="canonical" href="https://www.giovanniduminuco.it/">
     
-    <link rel="icon" type="image/png" href="GD.png">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.giovanniduminuco.it">
-    <meta property="og:title" content="Giovanni Duminuco">
-    <meta property="og:description" content="Dottorando in Scienze dell'educazione e docente universitario. Filosofia dell'educazione, ricerca letteraria, progettazione sociale.">
-    <meta property="og:image" content="https://www.giovanniduminuco.it/GD.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Giovanni Duminuco",
-      "jobTitle": "Dottorando in Scienze dell'educazione, Docente Universitario",
-      "url": "https://www.giovanniduminuco.it",
-      "description": "Dottorando in Scienze dell'educazione e docente universitario specializzato in filosofia dell'educazione e progettazione sociale."
-    }
-    </script>
+    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
 
     <style>
         /* Reset e Base */
@@ -32,11 +13,11 @@
         html { scroll-behavior: smooth; }
         
         body {
-            font-family: Georgia, serif;
+            font-family: 'Latin Modern Roman', Georgia, serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 18px;
-            line-height: 27px;
+            font-size: 18px; /* Dimensione richiesta */
+            line-height: 27px; /* Proporzione 1.5 per la massima leggibilità */
             color: rgb(30, 30, 30);
             background-color: #F5F5F5;
             max-width: 600px;
@@ -45,7 +26,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header e Navigazione */
         .header-main { 
             display: flex;
             flex-direction: column;
@@ -58,34 +38,30 @@
             font-size: 26px; 
             font-weight: 700; 
             margin: 0; 
-            line-height: 34px;
+            line-height: 32px;
             letter-spacing: -0.01em;
         }
         h1 a { text-decoration: none; color: rgb(30, 30, 30); }
         
         .profile-img { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 12px; 
+            width: 115px; 
+            height: 115px; 
+            border-radius: 10px; 
             object-fit: cover; 
             border: 1px solid #eee; 
             filter: grayscale(100%); 
             transition: filter 0.4s ease;
         }
-        
-        .profile-img:hover {
-            filter: grayscale(0%);
-        }
+        .profile-img:hover { filter: grayscale(0%); }
 
         nav { 
-            font-size: 0.95rem; 
-            margin-top: 12px; 
-            border-top: 1px solid #eee; 
+            font-size: 0.92rem; 
+            margin-top: 10px; 
+            border-top: 1px solid #ddd; 
             padding-top: 12px; 
         }
-        
         nav a { 
-            margin-right: 25px; 
+            margin-right: 22px; 
             text-decoration: none; 
             font-weight: 700; 
             color: rgb(30, 30, 30); 
@@ -94,75 +70,66 @@
             padding-bottom: 2px; 
             transition: all 0.2s ease; 
         }
-        
         nav a:hover { border-bottom: 2px solid rgb(30, 30, 30); }
 
-        /* Sezioni - Margine ridotto per maggiore coesione */
-        section { margin-bottom: 2.5rem; } 
-        
+        section { margin-bottom: 2.4rem; } 
         h2 { 
-            font-size: 0.9rem; 
+            font-size: 0.82rem; 
             font-weight: 700;
             border-bottom: 1px solid rgb(30, 30, 30); 
-            padding-bottom: 5px; 
-            margin-bottom: 15px; /* Spazio ridotto prima del contenuto */
+            padding-bottom: 4px; 
+            margin-bottom: 14px; 
             text-transform: uppercase; 
-            letter-spacing: 1.2px; 
+            letter-spacing: 1.3px; 
         }
         
+        #bio p {
+            margin-bottom: 15px;
+        }
+
         .writing-title {
             display: block;
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 2px;
-            margin-top: 0;
         }
 
-        /* Link e Liste */
-        main a { color: rgb(30, 30, 30); text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
-        main a[target="_blank"]::after {
-            content: " ↗";
-            font-size: 0.7rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-
+        main a { color: rgb(30, 30, 30); text-decoration: underline; text-underline-offset: 3.5px; font-weight: 500; }
+        
         ul { list-style-type: square; padding-left: 20px; }
-        li { margin-bottom: 25px; }
-        #ricerca li { margin-bottom: 8px; }
+        li { margin-bottom: 24px; }
+        #ricerca li { margin-bottom: 7px; }
 
         .pub-detail { 
             display: block; 
-            font-size: 0.9rem; 
-            color: #666; 
-            margin-top: 6px; 
-            line-height: 1.5; 
-            margin-bottom: 5px;
+            font-size: 0.88rem; 
+            color: #555; 
+            margin-top: 5px; 
+            line-height: 1.45; 
+            font-style: italic;
         }
 
-        /* Media Containers */
         .audio-container { 
             margin-top: 15px; 
-            background: #eee; 
-            padding: 15px; 
+            background: #ededed; 
+            padding: 14px; 
             border-radius: 4px;
         }
-        
         .audio-container p { margin-top: 0; font-size: 0.85rem; line-height: 1.4; }
-        audio { width: 100%; height: 32px; margin-top: 10px; }
+        .audio-subtext { font-size: 0.75rem; color: #555; font-style: italic; }
+        
+        audio { width: 100%; height: 30px; margin-top: 10px; }
 
-        /* Footer */
         footer { 
             margin-top: 4rem; 
-            font-size: 0.8rem; 
-            color: #888; 
-            border-top: 1px solid #eee; 
-            padding-top: 25px; 
+            font-size: 0.78rem; 
+            color: #777; 
+            border-top: 1px solid #ddd; 
+            padding-top: 22px; 
         }
 
         @media (max-width: 480px) { 
             body { padding: 40px 20px; }
-            nav a { margin-right: 15px; font-size: 0.9rem; }
             h1 { font-size: 24px; }
         }
     </style>
@@ -171,10 +138,7 @@
 
 <header>
     <div class="header-main">
-        <picture>
-            <source srcset="GD.webp" type="image/webp">
-            <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
-        </picture>
+        <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
         <h1><a href="/">Giovanni Duminuco</a></h1>
     </div>
     <nav>
@@ -187,7 +151,8 @@
 
 <main>
     <section id="bio">
-        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario.</p> <p>Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
+        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario.</p> 
+        <p>Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
         <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
     </section>
 
@@ -207,14 +172,13 @@
             <li>
                 <h3 class="writing-title">La ferita distorta dell'agire (Formebrevi, 2017)</h3>
                 <span class="pub-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
-                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank" rel="noopener noreferrer">Scheda dell'opera</a>
+                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
                 
                 <div class="audio-container">
                     <p><strong>Lettura dell'opera</strong><br>
-                    <span style="font-size: 0.75rem; color: #888;">Voce: Giovanni Giudice</span></p>
-                    <audio controls aria-label="Ascolta La ferita distorta dell'agire">
-                        <source src="audio/la-ferita-distorta.mp3" type="audio/mpeg">
-                        Il tuo browser non supporta l'ascolto audio.
+                    <span class="audio-subtext">Voce recitante di Giovanni Gentile</span></p>
+                    <audio controls>
+                        <source src="audio/la-ferita.mp3" type="audio/mpeg">
                     </audio>
                 </div>
             </li>
@@ -222,16 +186,13 @@
             <li>
                 <h3 class="writing-title">Dinamiche del disaccordo (Anterem Edizioni, 2013)</h3>
                 <span class="pub-detail">Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
-                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank" rel="noopener noreferrer">Scheda editoriale</a>
+                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda dell'opera</a>
                 
                 <div class="audio-container">
-                    <p>
-                        <strong>Interpretazione sonora</strong><br>
-                        Composizione originale di <strong>Valentina Massetti</strong>.
-                    </p>
-                    <audio controls aria-label="Ascolta Dinamiche del disaccordo">
-                        <source src="https://www.cosimocolazzo.it/wordpress/wp-content/uploads/2013/12/5_Massetti_Dinamiche-del-disaccordo_testo-di-Duminuco.mp3" type="audio/mpeg">
-                        Il tuo browser non supporta l'ascolto audio.
+                    <p><strong>Interpretazione sonora</strong><br>
+                    <span class="audio-subtext">Composizione di Valentina Massetti - Conservatorio di Trento.</span></p>
+                    <audio controls>
+                        <source src="audio/dinamiche.mp3" type="audio/mpeg">
                     </audio>
                 </div>
             </li>
@@ -241,7 +202,7 @@
 
 <footer>
     © 2026 — Giovanni Duminuco. <br>
-    Sito statico: nessun cookie, nessun tracciamento.
+    Privacy by design: zero cookie, zero tracciamento.
 </footer>
 
 </body>
