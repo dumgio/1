@@ -5,205 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Duminuco | Filosofia, Pedagogia e Progettazione Sociale</title>
     
-    <link href="https://fonts.cdnfonts.com/css/latin-modern-roman" rel="stylesheet">
-
     <style>
-        /* Reset e Base */
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Latin Modern Roman', Georgia, serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 18px; 
-            line-height: 27px; 
-            color: rgb(30, 30, 30);
-            background-color: #F5F5F5;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 80px 20px 50px;
-            -webkit-font-smoothing: antialiased;
+        /* Base e Reset */
+        :root {
+            --bg-color: #F3F3F3;
+            --text-color: #1a1a1a;
+            --muted-color: #666;
+            --border-color: #e0e0e0;
         }
 
-        .header-main { 
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 1.1rem; /* Ingrandito font di base */
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* Header stile Rishi Dass */
+        .site-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px; /* Quadrato con angoli arrotondati */
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .header-content {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+        }
+
+        .site-title {
+            font-size: 1.6rem; /* Leggermente ingrandito */
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .site-title a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .site-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0;
+            display: flex;
             gap: 15px;
-            margin-bottom: 0.8rem;
         }
 
-        h1 { 
-            font-size: 26px; 
-            font-weight: 700; 
-            margin: 0; 
-            line-height: 32px;
-            letter-spacing: -0.01em;
+        .site-nav a {
+            text-decoration: none;
+            color: var(--muted-color);
+            font-size: 1rem; /* Leggermente ingrandito */
+            font-weight: 500;
+            transition: color 0.2s;
         }
-        h1 a { text-decoration: none; color: rgb(30, 30, 30); }
-        
-        .profile-img { 
-            width: 115px; 
-            height: 115px; 
-            border-radius: 10px; 
-            object-fit: cover; 
-            border: 1px solid #eee; 
-            filter: grayscale(100%); 
-            transition: filter 0.4s ease;
-        }
-        .profile-img:hover { filter: grayscale(0%); }
 
-        nav { 
-            font-size: 0.92rem; 
-            margin-top: 10px; 
-            border-top: 1px solid #ddd; 
-            padding-top: 12px; 
+        .site-nav a:hover {
+            color: var(--text-color);
         }
-        nav a { 
-            margin-right: 22px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            color: rgb(30, 30, 30); 
-            display: inline-block; 
-            border-bottom: 2px solid transparent; 
-            padding-bottom: 2px; 
-            transition: all 0.2s ease; 
-        }
-        nav a:hover { border-bottom: 2px solid rgb(30, 30, 30); }
 
-        section { margin-bottom: 2.4rem; } 
-        h2 { 
-            font-size: 0.82rem; 
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 40px 0;
+        }
+
+        /* Contenuto */
+        h2 {
+            font-size: 1.4rem; /* Leggermente ingrandito */
+            margin-bottom: 1rem;
+        }
+
+        p { margin-bottom: 1.2rem; }
+
+        a {
+            color: var(--text-color);
+            text-underline-offset: 3px;
+        }
+
+        ul.site-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.site-list li {
+            margin-bottom: 25px;
+        }
+
+        .item-title {
             font-weight: 700;
-            border-bottom: 1px solid rgb(30, 30, 30); 
-            padding-bottom: 4px; 
-            margin-bottom: 14px; 
-            text-transform: uppercase; 
-            letter-spacing: 1.3px; 
-        }
-        
-        #bio p {
-            margin-bottom: 15px;
-        }
-
-        .writing-title {
             display: block;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 2px;
+            font-size: 1.2rem; /* Leggermente ingrandito */
         }
 
-        main a { color: rgb(30, 30, 30); text-decoration: underline; text-underline-offset: 3.5px; font-weight: 500; }
-        
-        ul { list-style-type: square; padding-left: 20px; }
-        li { margin-bottom: 24px; }
-        #ricerca li { margin-bottom: 7px; }
-
-        .pub-detail { 
-            display: block; 
-            font-size: 0.88rem; 
-            color: #555; 
-            margin-top: 5px; 
-            line-height: 1.45; 
+        .item-detail {
+            display: block;
+            font-size: 0.95rem; /* Leggermente ingrandito */
+            color: var(--muted-color);
             font-style: italic;
+            margin-bottom: 5px;
         }
 
-        .audio-container { 
-            margin-top: 15px; 
-            background: #ededed; 
-            padding: 14px; 
-            border-radius: 4px;
+        /* Audio Player Minimal */
+        .audio-container {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0,0,0,0.03);
+            border-radius: 8px;
         }
-        .audio-container p { margin-top: 0; font-size: 0.85rem; line-height: 1.4; }
-        .audio-subtext { font-size: 0.75rem; color: #555; font-style: italic; }
         
-        audio { width: 100%; height: 30px; margin-top: 10px; }
-
-        footer { 
-            margin-top: 4rem; 
-            font-size: 0.78rem; 
-            color: #777; 
-            border-top: 1px solid #ddd; 
-            padding-top: 22px; 
+        audio {
+            width: 100%;
+            height: 35px;
         }
 
-        @media (max-width: 480px) { 
-            body { padding: 40px 20px; }
-            h1 { font-size: 24px; }
+        footer {
+            margin-top: 60px;
+            font-size: 0.9rem; /* Leggermente ingrandito */
+            color: var(--muted-color);
+        }
+
+        @media (max-width: 480px) {
+            .site-header { flex-direction: column; align-items: flex-start; }
+            .site-nav ul { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-main">
-        <img src="GD.png" alt="Giovanni Duminuco" class="profile-img">
-        <h1><a href="/">Giovanni Duminuco</a></h1>
-    </div>
-    <nav>
-        <a href="#bio">Bio</a>
-        <a href="#ricerca">Ricerca</a>
-        <a href="#scritti">Scritti</a>
-        <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
-    </nav>
-</header>
+<div class="container">
+    <header class="site-header">
+        <img src="GD.png" alt="Giovanni Duminuco" class="avatar">
+        <div class="header-content">
+            <h1 class="site-title"><a href="#">Giovanni Duminuco</a></h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#bio">Bio</a></li>
+                    <li><a href="#ricerca">Ricerca</a></li>
+                    <li><a href="#scritti">Scritti</a></li>
+                    <li><a href="mailto:giovanni.duminuco@gmail.com">Contatto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <section id="bio">
-        <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario.</p> 
-        <p>Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
-        <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
-    </section>
+    <hr>
 
-    <section id="ricerca">
-        <h2>Interessi di ricerca</h2>
-        <ul>
-            <li>Filosofia dell'educazione</li>
-            <li>Ricerca letteraria</li>
-            <li>Pedagogia generale e sociale</li>
-            <li>Epistemologia della complessità</li>
-        </ul>
-    </section>
+    <main>
+        <section id="bio">
+            <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario.</p> 
+            <p>Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
+            <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
+        </section>
 
-    <section id="scritti">
-        <h2>Scritti scelti</h2>
-        <ul>
-            <li>
-                <h3 class="writing-title">La ferita distorta dell'agire (Formebrevi, 2017)</h3>
-                <span class="pub-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
-                <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
-                
-                <div class="audio-container">
-                    <p><strong>Lettura dell'opera</strong><br>
-                    <span class="audio-subtext">Voce recitante di Giovanni Gentile</span></p>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/la-ferita.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </li>
+        <hr>
 
-            <li>
-                <h3 class="writing-title">Dinamiche del disaccordo (Anterem Edizioni, 2013)</h3>
-                <span class="pub-detail">Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
-                <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda dell'opera</a>
-                
-                <div class="audio-container">
-                    <p><strong>Interpretazione sonora</strong><br>
-                    <span class="audio-subtext">Composizione di Valentina Massetti - Conservatorio di Trento.</span></p>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/dinamiche-disaccordo.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </li>
-        </ul>
-    </section>
-</main>
+        <section id="ricerca">
+            <h2>Interessi di ricerca</h2>
+            <p>Filosofia dell'educazione, ricerca letteraria, pedagogia generale e sociale, epistemologia della complessità.</p>
+        </section>
 
-<footer>
-    © 2026 — Giovanni Duminuco. <br>
-    Privacy by design: zero cookie, zero tracciamento.
-</footer>
+        <hr>
+
+        <section id="scritti">
+            <h2>Scritti scelti</h2>
+            <ul class="site-list">
+                <li>
+                    <span class="item-title">La ferita distorta dell'agire (Formebrevi, 2017)</span>
+                    <span class="item-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
+                    <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
+                    
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/la-ferita.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="item-title">Dinamiche del disaccordo (Anterem Edizioni, 2013)</span>
+                    <span class="item-detail">Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
+                    <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda dell'opera</a>
+                    
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/dinamiche-disaccordo.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>© 2026 — Giovanni Duminuco. <br>
+        Privacy by design: zero cookie, zero tracciamento.</p>
+    </footer>
+</div>
 
 </body>
 </html>
