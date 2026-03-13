@@ -40,15 +40,6 @@
             margin-bottom: 20px;
         }
 
-        .avatar {
-            width: 85px;
-            height: 85px;
-            border-radius: 12px;
-            object-fit: cover;
-            filter: grayscale(100%);
-            flex-shrink: 0;
-        }
-
         .header-content {
             display: flex;
             flex-direction: column;
@@ -71,22 +62,6 @@
             color: var(--muted-color);
             margin: 4px 0 0;
             letter-spacing: 0.01em;
-        }
-
-        .site-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 8px 0 0;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .site-nav a {
-            text-decoration: none;
-            color: var(--muted-color);
-            font-size: 1rem;
-            font-weight: 600;
         }
 
         hr {
@@ -118,11 +93,41 @@
             color: var(--muted-color);
         }
 
-        @media (max-width: 480px) {
-            body { padding: 30px 15px; }
-            .avatar { width: 70px; height: 70px; }
-            .site-title { font-size: 1.5rem; }
-            .site-nav ul { gap: 10px; }
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 18px;
+                font-size: 1.05rem;
+            }
+
+            .site-header {
+                gap: 14px;
+            }
+
+            .site-title {
+                font-size: 1.4rem;
+            }
+
+            .site-tagline {
+                font-size: 0.82rem;
+            }
+
+            hr {
+                margin: 28px 0;
+            }
+
+            p {
+                margin-bottom: 1.2rem;
+            }
+
+            .cta-link {
+                font-size: 1rem;
+            }
+
+            footer {
+                margin-top: 50px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -130,16 +135,9 @@
 
 <div class="container">
     <header class="site-header">
-        <img src="GD.png" alt="Giovanni Duminuco" class="avatar">
         <div class="header-content">
             <h1 class="site-title"><a href="/">Giovanni Duminuco</a></h1>
             <p class="site-tagline">Ricerca · Progettazione sociale · Terzo Settore</p>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#bio">Bio</a></li>
-                    <li><a href="/cdn-cgi/l/email-protection#3f585650495e515156115b4a5256514a5c507f58525e5653115c5052">Contatto</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -147,17 +145,23 @@
 
     <main>
         <section id="bio">
-            <p>👋 Ciao, sono Giovanni Duminuco.</p>
+            <p>Ciao, sono Giovanni Duminuco.</p>
             <p>Sono <strong>dottorando in Scienze dell'Educazione</strong> e insegno <strong>Filosofia</strong> all'università. Ho iniziato con i libri. Ho continuato con i progetti, i bandi, le persone. Non ho mai smesso di fare entrambe le cose.</p>
-            <p>In questo spazio scrivo di educazione, organizzazioni e Terzo Settore. A volte di filosofia. Spesso di tutte queste cose insieme. 🙂</p>
+            <p>In questo spazio scrivo di educazione, organizzazioni e Terzo Settore. A volte di filosofia. Spesso di tutte queste cose insieme.</p>
             <p>Collaboro con persone e organizzazioni che lavorano su questioni complesse: <strong>progettazione sociale</strong>, <strong>fondi pubblici</strong>, <strong>impatto delle attività</strong>.</p>
-            <p>Non ho un ufficio. Ho una mail e tanta pazienza per le cose che contano.</p> 
+            <p>Non ho un ufficio. Ho una mail e tanta pazienza per le cose che contano.</p>
             <p>Puoi scrivermi se hai un progetto da costruire, un'organizzazione da raccontare, o semplicemente una domanda che non riesci a mettere a fuoco.</p>
-            <a href="/cdn-cgi/l/email-protection#d9beb0b6afb8b7b7b0f7bdacb4b0b7acbab699beb4b8b0b5f7bab6b4" class="cta-link">✍️ Scrivimi</a>
+            <a href="mailto:giovanni.duminuco@gmail.com" class="cta-link">Scrivimi</a>
         </section>
     </main>
 
     <hr>
 
     <footer>
-        <p>© 2026 — Giovanni Duminuco.<br>
+        <p>© 2026 — Giovanni Duminuco · <a href="https://www.linkedin.com/in/dumgio/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+        Privacy by design: zero cookie, zero tracciamento.</p>
+    </footer>
+</div>
+
+</body>
+</html>
