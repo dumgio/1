@@ -40,6 +40,15 @@
             margin-bottom: 20px;
         }
 
+        .avatar {
+            width: 85px;
+            height: 85px;
+            border-radius: 12px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            flex-shrink: 0;
+        }
+
         .header-content {
             display: flex;
             flex-direction: column;
@@ -135,6 +144,7 @@
 
 <div class="container">
     <header class="site-header">
+        <img src="GD.png" alt="Giovanni Duminuco" class="avatar">
         <div class="header-content">
             <h1 class="site-title"><a href="/">Giovanni Duminuco</a></h1>
             <p class="site-tagline">Ricerca · Progettazione sociale · Terzo Settore</p>
