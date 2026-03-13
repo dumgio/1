@@ -7,7 +7,7 @@
     
     <style>
         :root {
-            --bg-color: #F3F3F3;
+            --bg-color: #F9F9F9;
             --text-color: #1a1a1a;
             --muted-color: #666;
             --border-color: #dcdcdc;
@@ -24,7 +24,6 @@
             padding: 60px 20px;
             display: flex;
             justify-content: center;
-            /* Font base ingrandito */
             font-size: 1.2rem; 
         }
 
@@ -33,10 +32,9 @@
             width: 100%;
         }
 
-        /* Header: Sempre affiancato (Flex-row) */
         .site-header {
             display: flex;
-            flex-direction: row; /* Forza l'affiancamento */
+            flex-direction: row;
             align-items: center;
             gap: 20px;
             margin-bottom: 20px;
@@ -45,10 +43,10 @@
         .avatar {
             width: 85px;
             height: 85px;
-            border-radius: 12px; /* Quadrato con angoli arrotondati */
+            border-radius: 12px;
             object-fit: cover;
             filter: grayscale(100%);
-            flex-shrink: 0; /* Impedisce all'immagine di restringersi */
+            flex-shrink: 0;
         }
 
         .header-content {
@@ -68,13 +66,20 @@
             color: var(--text-color);
         }
 
+        .site-tagline {
+            font-size: 0.95rem;
+            color: var(--muted-color);
+            margin: 4px 0 0;
+            letter-spacing: 0.01em;
+        }
+
         .site-nav ul {
             list-style: none;
             padding: 0;
             margin: 8px 0 0;
             display: flex;
             gap: 15px;
-            flex-wrap: wrap; /* Permette al menu di andare a capo se non c'è spazio */
+            flex-wrap: wrap;
         }
 
         .site-nav a {
@@ -90,13 +95,6 @@
             margin: 40px 0;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
         p { margin-bottom: 1.5rem; }
 
         a {
@@ -105,40 +103,13 @@
             text-underline-offset: 4px;
         }
 
-        ul.site-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul.site-list li {
-            margin-bottom: 35px;
-        }
-
-        .item-title {
+        .cta-link {
+            display: inline-block;
+            margin-top: 0.25rem;
             font-weight: 700;
-            display: block;
-            font-size: 1.3rem;
-            line-height: 1.3;
-        }
-
-        .item-detail {
-            display: block;
-            font-size: 1rem;
-            color: var(--muted-color);
-            font-style: italic;
-            margin: 5px 0 8px;
-        }
-
-        .audio-container {
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(0,0,0,0.04);
-            border-radius: 10px;
-        }
-        
-        audio {
-            width: 100%;
-            height: 38px;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            color: var(--text-color);
         }
 
         footer {
@@ -147,10 +118,9 @@
             color: var(--muted-color);
         }
 
-        /* Ottimizzazione Mobile */
         @media (max-width: 480px) {
             body { padding: 30px 15px; }
-            .avatar { width: 70px; height: 70px; } /* Leggermente più piccola su mobile */
+            .avatar { width: 70px; height: 70px; }
             .site-title { font-size: 1.5rem; }
             .site-nav ul { gap: 10px; }
         }
@@ -163,11 +133,10 @@
         <img src="GD.png" alt="Giovanni Duminuco" class="avatar">
         <div class="header-content">
             <h1 class="site-title"><a href="/">Giovanni Duminuco</a></h1>
+            <p class="site-tagline">Ricerca · Progettazione sociale · Terzo Settore</p>
             <nav class="site-nav">
                 <ul>
                     <li><a href="#bio">Bio</a></li>
-                    <li><a href="#ricerca">Ricerca</a></li>
-                    <li><a href="#scritti">Scritti</a></li>
                     <li><a href="mailto:giovanni.duminuco@gmail.com">Contatto</a></li>
                 </ul>
             </nav>
@@ -178,54 +147,19 @@
 
     <main>
         <section id="bio">
-            <p><strong>Dottorando in Scienze dell'educazione</strong> e docente universitario.</p> 
-            <p>Laureato in Filosofia, con oltre 20 anni di esperienza nella progettazione sociale in contesti educativi complessi.</p>
-            <p>Attraverso la ricerca letteraria e filosofica, il mio lavoro interroga le categorie, le narrazioni e i linguaggi con cui costruiamo e diamo senso al mondo.</p>
-        </section>
-
-        <hr>
-
-        <section id="ricerca">
-            <h2>Interessi di ricerca</h2>
-            <p>Filosofia dell'educazione, ricerca letteraria, pedagogia generale e sociale, epistemologia della complessità.</p>
-        </section>
-
-        <hr>
-
-        <section id="scritti">
-            <h2>Scritti scelti</h2>
-            <ul class="site-list">
-                <li>
-                    <span class="item-title">La ferita distorta dell'agire (Formebrevi, 2017)</span>
-                    <span class="item-detail">Poesia in prosa. Con postfazione di Peter Carravetta.</span>
-                    <a href="https://formebrevi.it/prodotto/giovanni-duminuco-la-ferita-distorta-dellagire/" target="_blank">Scheda dell'opera</a>
-                    
-                    <div class="audio-container">
-                        <audio controls>
-                            <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/la-ferita.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </li>
-
-                <li>
-                    <span class="item-title">Dinamiche del disaccordo (Anterem Edizioni, 2013)</span>
-                    <span class="item-detail">Premio Lorenzo Montano. Postfazione di Giorgio Bonacini.</span>
-                    <a href="https://www.anteremedizioni.it/dinamiche_del_disaccordo" target="_blank">Scheda dell'opera</a>
-                    
-                    <div class="audio-container">
-                        <audio controls>
-                            <source src="https://raw.githubusercontent.com/dumgio/sito/main/audio/dinamiche-disaccordo.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </li>
-            </ul>
+            <p>Ciao, sono Giovanni Duminuco.</p>
+            <p>Sono <strong>dottorando in Scienze dell'Educazione</strong> e insegno <strong>Filosofia</strong> all'università. Ho iniziato con i libri. Ho continuato con i progetti, i bandi, le persone. Non ho mai smesso di fare entrambe le cose.</p>
+            <p>In questo spazio scrivo di educazione, organizzazioni e Terzo Settore. A volte di filosofia. Spesso di tutte queste cose insieme.</p>
+            <p>Collaboro con persone e organizzazioni che lavorano su questioni complesse: <strong>progettazione sociale</strong>, <strong>fondi pubblici</strong>, <strong>impatto delle attività</strong>.</p>
+            <p>Non ho un ufficio. Ho una mail e tanta pazienza per le cose che contano. Puoi scrivermi se hai un progetto da costruire, un'organizzazione da raccontare, o semplicemente una domanda che non riesci a mettere a fuoco.</p>
+            <a href="mailto:giovanni.duminuco@gmail.com" class="cta-link">Scrivimi</a>
         </section>
     </main>
 
     <hr>
 
     <footer>
-        <p>© 2026 — Giovanni Duminuco. <br>
+        <p>© 2026 — Giovanni Duminuco.<br>
         Privacy by design: zero cookie, zero tracciamento.</p>
     </footer>
 </div>
